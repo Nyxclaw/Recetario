@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alacena - Buscador de Recetas</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fondo: '#162526',
+                        cristal: '#2C3E40',
+                        texto: '#E4F1F2',
+                        acento: '#94A6A6'
+                    },
+                    fontFamily: {
+                        sans: ['Geist', 'sans-serif'],
+                        titulo: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-fondo text-texto font-sans min-h-screen p-6">
+
+    <main class="max-w-md mx-auto mt-10">
+        
+        <h1 class="font-titulo text-4xl mb-2">Mi Alacena</h1>
+        <p class="text-acento mb-6">¿Qué ingredientes tienes hoy?</p>
+
+        <div class="mb-4">
+            <input 
+                type="text" 
+                id="input-ingrediente" 
+                placeholder="Ej. pollo, tomate... (Presiona Enter)" 
+                class="w-full bg-cristal/30 border border-acento/50 rounded-2xl px-4 py-3 text-texto placeholder-acento/70 focus:outline-none focus:border-texto transition-colors backdrop-blur-sm"
+            >
+        </div>
+
+        <div id="contenedor-tags" class="flex flex-wrap gap-2 mb-8">
+            </div>
+
+        <div id="contenedor-recetas" class="grid gap-5">
+            </div>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

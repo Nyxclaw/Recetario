@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "titulo": "Pollo a la plancha con pimientos",
+    "tiempo_minutos": 20,
+    "ingredientes_clave": ["pollo", "pimiento", "cebolla"],
+    "instrucciones": [
+      "Corta 200g de pechuga de pollo, 1 pimiento y media cebolla en tiras.",
+      "Calienta un sartén con aceite y saltea la cebolla con el pimiento por 5 minutos.",
+      "Agrega el pollo, sazona con sal y pimienta, y cocina hasta que esté dorado."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Pollo+a+la+Plancha"
+  },
+  {
+    "id": 2,
+    "titulo": "Arroz rojo sencillo",
+    "tiempo_minutos": 30,
+    "ingredientes_clave": ["arroz", "tomate", "cebolla", "caldo de pollo"],
+    "instrucciones": [
+      "Licúa 2 tomates con un trozo de cebolla y media taza de agua.",
+      "Fríe 1 taza de arroz en un sartén con aceite hasta que tome un color dorado ligero.",
+      "Vierte la mezcla de tomate, agrega 2 tazas de caldo de pollo, tapa y cocina a fuego bajo por 20 minutos."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Arroz+Rojo"
+  },
+  {
+    "id": 3,
+    "titulo": "Pasta con ajo y espinacas",
+    "tiempo_minutos": 15,
+    "ingredientes_clave": ["pasta", "espinaca"],
+    "instrucciones": [
+      "Hierve la pasta según las instrucciones del empaque.",
+      "En un sartén, dora un poco de ajo picado (de tu despensa base) en aceite de oliva.",
+      "Agrega un puñado de espinacas frescas hasta que se reduzcan.",
+      "Mezcla con la pasta escurrida y sirve."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Pasta+con+Espinacas"
+  }
+]
