@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pantallaRecetaCompleta = document.getElementById('pantalla-receta-completa');
     const detalleRecetaCompleta = document.getElementById('detalle-receta-completa');
     const btnRegresar = document.getElementById('btn-regresar');
+    const btnAgregar = document.getElementById('btn-agregar');
 
     let todasLasRecetas = []; // Aquí guardaremos la base de datos completa
     let misIngredientes = []; // Aquí guardaremos lo que el usuario escriba
@@ -23,19 +24,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 2. CAPTURAR EL TECLADO (Evento Enter)
+    // Función central para agregar ingredientes a la lista
+    function agregarIngrediente() {
+        const nuevoIngrediente = inputIngrediente.value.trim().toLowerCase();
+        
+        if (nuevoIngrediente !== '' && !misIngredientes.includes(nuevoIngrediente)) {
+            misIngredientes.push(nuevoIngrediente);
+            inputIngrediente.value = ''; // Limpiamos la barra
+            actualizarInterfaz();
+        }
+    }
+
+    // Disparador 1: Tecla Enter en el teclado (PC o Móvil)
     inputIngrediente.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
-            e.preventDefault(); // Evita que la página se recargue
-            const nuevoIngrediente = inputIngrediente.value.trim().toLowerCase();
-            
-            // Si no está vacío y no lo hemos agregado antes...
-            if (nuevoIngrediente !== '' && !misIngredientes.includes(nuevoIngrediente)) {
-                misIngredientes.push(nuevoIngrediente); // Lo guardamos en la memoria
-                inputIngrediente.value = ''; // Limpiamos la barra
-                actualizarInterfaz(); // Disparamos la actualización
-            }
+            e.preventDefault(); 
+            agregarIngrediente();
         }
+    });
+
+    // Disparador 2: Clic en el nuevo botón "+"
+    btnAgregar.addEventListener('click', () => {
+        agregarIngrediente();
+        // Opcional: regresar el foco al input para seguir escribiendo en PC
+        inputIngrediente.focus(); 
     });
 
     // 3. DIBUJAR LOS TAGS (Las píldoras visuales)
@@ -58,34 +70,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. EL MOTOR DE BÚSQUEDA (Lógica de subconjuntos)
+    // 4. FILTRAR LAS RECETAS (Actualizado para incluir coincidencias por título)
     function filtrarRecetas() {
-        // Si no hay ingredientes, mostramos todo
         if (misIngredientes.length === 0) {
             dibujarTarjetas(todasLasRecetas);
             return;
         }
 
-        // Filtramos las recetas
         const recetasFiltradas = todasLasRecetas.map(receta => {
-            // Contamos cuántos ingredientes de la receta tenemos
+            // 1. LÓGICA ESTRICTA (AND): Verificamos si CADA etiqueta del usuario existe en esta receta
+            const tieneTodoLoBuscado = misIngredientes.every(miIng => {
+                const estaEnTitulo = receta.titulo.toLowerCase().includes(miIng);
+                const estaEnIngredientes = receta.ingredientes_clave.some(req => req.toLowerCase().includes(miIng));
+                
+                // Debe estar en el título o en los ingredientes para ser válida
+                return estaEnTitulo || estaEnIngredientes; 
+            });
+
+            // 2. Calculamos cuántos ingredientes nos siguen faltando de la receta original
             let encontrados = 0;
             receta.ingredientes_clave.forEach(req => {
-                // Buscamos si la palabra que escribiste ESTÁ CONTENIDA en el ingrediente de la receta
-                const coincide = misIngredientes.some(miIng => req.toLowerCase().includes(miIng));
-                if (coincide) {
+                if (misIngredientes.some(miIng => req.toLowerCase().includes(miIng))) {
                     encontrados++;
                 }
             });
 
-            // Calculamos cuántos nos faltan
             const faltantes = receta.ingredientes_clave.length - encontrados;
+            const coincideTitulo = misIngredientes.some(miIng => receta.titulo.toLowerCase().includes(miIng));
             
-            return { ...receta, faltantes }; // Devolvemos la receta con ese nuevo dato
+            return { ...receta, faltantes, coincideTitulo, tieneTodoLoBuscado };
         })
-        // Nos quedamos solo con las recetas donde tenemos al menos 1 ingrediente
-        .filter(receta => receta.faltantes < receta.ingredientes_clave.length)
-        // Ordenamos: primero las que tienen menos ingredientes faltantes (Coincidencia exacta arriba)
+        // 3. EL EMBUDO: Solo dejamos pasar las recetas que pasaron la prueba estricta
+        .filter(receta => receta.tieneTodoLoBuscado)
+        // 4. ORDEN: Mostramos primero las que requieren menos ingredientes extra
         .sort((a, b) => a.faltantes - b.faltantes);
 
         dibujarTarjetas(recetasFiltradas);
@@ -109,17 +126,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Etiqueta visual para coincidencias exactas o parciales
             let etiquetaFaltantes = '';
-            if (receta.faltantes !== undefined) {
-                if (receta.faltantes === 0) {
+            
+            // SOLO dibujamos las etiquetas si el usuario ha buscado al menos un ingrediente
+            if (misIngredientes.length > 0) {
+                if (receta.coincideTitulo) {
+                    etiquetaFaltantes = '<span class="absolute top-3 right-3 bg-blue-500/80 text-white text-xs px-2 py-1 rounded-full backdrop-blur-md">Búsqueda directa</span>';
+                } else if (receta.faltantes === 0) {
                     etiquetaFaltantes = '<span class="absolute top-3 right-3 bg-green-500/80 text-white text-xs px-2 py-1 rounded-full backdrop-blur-md">¡Puedes prepararlo!</span>';
                 } else {
-                    etiquetaFaltantes = `<span class="absolute top-3 right-3 bg-orange-500/80 text-white text-xs px-2 py-1 rounded-full backdrop-blur-md">Te faltan ${receta.faltantes} ingrediente(s)</span>`;
+                    etiquetaFaltantes = `<span class="absolute top-3 right-3 bg-orange-500/80 text-white text-xs px-2 py-1 rounded-full backdrop-blur-md">Te faltan ${receta.faltantes}</span>`;
                 }
             }
 
             tarjeta.innerHTML = `
                 ${etiquetaFaltantes}
-                <img src="${receta.imagen}" alt="${receta.titulo}" class="w-full h-32 object-cover opacity-80 mix-blend-overlay">
                 <div class="p-5">
                     <h3 class="font-titulo text-xl mb-1">${receta.titulo}</h3>
                     <p class="text-acento text-sm mb-3">⏳ ${receta.tiempo_minutos} min</p>
@@ -149,7 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         modalContenido.innerHTML = `
             <div class="relative">
-                <img src="${receta.imagen}" alt="${receta.titulo}" class="w-full h-48 object-cover opacity-70">
                 <button onclick="mostrarRecetaCompleta(${receta.id})" class="w-full bg-texto text-fondo font-bold py-3 rounded-xl hover:bg-texto/80 transition-colors shadow-lg font-titulo">
                     Ver Receta Completa
                 </button>
@@ -215,8 +234,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Inyectamos el contenido estructurado
         detalleRecetaCompleta.innerHTML = `
-            <img src="${receta.imagen}" alt="${receta.titulo}" class="w-full h-56 object-cover rounded-3xl mb-6 opacity-80 border border-acento/20 shadow-lg">
-            <h2 class="font-titulo text-3xl mb-2">${receta.titulo}</h2>
             <p class="text-acento text-sm mb-8">⏱ Tiempo total: ${receta.tiempo_minutos} minutos</p>
             
             <h3 class="font-titulo text-xl mb-4 text-acento">Procedimiento paso a paso:</h3>

@@ -37,13 +37,15 @@
         <h1 class="font-titulo text-4xl mb-2">Mi Alacena</h1>
         <p class="text-acento mb-6">¿Qué ingredientes tienes hoy?</p>
 
-        <div class="mb-4">
-            <input 
-                type="text" 
-                id="input-ingrediente" 
-                placeholder="Ej. pollo, tomate... (Presiona Enter)" 
-                class="w-full bg-cristal/30 border border-acento/50 rounded-2xl px-4 py-3 text-texto placeholder-acento/70 focus:outline-none focus:border-texto transition-colors backdrop-blur-sm"
-            >
+        <div class="flex gap-2 mb-6">
+            <input type="text" id="input-ingrediente" 
+                   class="w-full bg-cristal/30 border border-acento/30 rounded-2xl px-5 py-4 text-texto placeholder-texto/50 focus:outline-none focus:border-acento transition-colors backdrop-blur-sm shadow-inner" 
+                   placeholder="Escribe un ingrediente (Ej. pollo, tomate, tortilla...)">
+            
+            <button id="btn-agregar" 
+                    class="bg-acento text-fondo px-6 py-4 rounded-2xl font-bold hover:bg-acento/80 transition-colors shadow-lg flex items-center justify-center font-titulo text-xl">
+                +
+            </button>
         </div>
 
         <div id="contenedor-tags" class="flex flex-wrap gap-2 mb-8">
