@@ -1,0 +1,28 @@
+const CACHE_NAME = 'alacena-v1';
+// Lista de archivos que queremos que el cel guarde para siempre
+const ASSETS = [
+  './',
+  './index.html',
+  './app.js',
+  './recetas.json',
+  './manifest.json',
+  'https://cdn.tailwindcss.com'
+];
+
+// Instalar el Service Worker y guardar los archivos en caché
+self.addEventListener('install', (e) => {
+  e.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(ASSETS);
+    })
+  );
+});
+
+// Estrategia: Buscar primero en caché, si no hay, ir a internet
+self.addEventListener('fetch', (e) => {
+  e.respondWith(
+    caches.match(e.request).then((res) => {
+      return res || fetch(e.request);
+    })
+  );
+});

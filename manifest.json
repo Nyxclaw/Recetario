@@ -1,0 +1,22 @@
+{
+  "name": "Mi Alacena - Buscador de Recetas",
+  "short_name": "Mi Alacena",
+  "description": "Encuentra qué cocinar con lo que tienes en casa, incluso sin internet.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0D1117",
+  "theme_color": "#0D1117",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://placehold.co/192x192/2C3E40/E4F1F2?text=Alacena",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://placehold.co/512x512/2C3E40/E4F1F2?text=Alacena",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
