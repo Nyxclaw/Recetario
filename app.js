@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const contenedorRecetas = document.getElementById('contenedor-recetas');
     const inputIngrediente = document.getElementById('input-ingrediente');
     const contenedorTags = document.getElementById('contenedor-tags');
+    const modalReceta = document.getElementById('modal-receta');
+    const modalContenido = document.getElementById('modal-contenido');
+    const pantallaRecetaCompleta = document.getElementById('pantalla-receta-completa');
+    const detalleRecetaCompleta = document.getElementById('detalle-receta-completa');
+    const btnRegresar = document.getElementById('btn-regresar');
 
     let todasLasRecetas = []; // Aquí guardaremos la base de datos completa
     let misIngredientes = []; // Aquí guardaremos lo que el usuario escriba
@@ -66,7 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // Contamos cuántos ingredientes de la receta tenemos
             let encontrados = 0;
             receta.ingredientes_clave.forEach(req => {
-                if (misIngredientes.includes(req.toLowerCase())) {
+                // Buscamos si la palabra que escribiste ESTÁ CONTENIDA en el ingrediente de la receta
+                const coincide = misIngredientes.some(miIng => req.toLowerCase().includes(miIng));
+                if (coincide) {
                     encontrados++;
                 }
             });
@@ -97,6 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const tarjeta = document.createElement('div');
             tarjeta.className = 'bg-cristal/40 backdrop-blur-md border border-acento/30 rounded-3xl overflow-hidden shadow-lg transition-all duration-300 hover:bg-cristal/60 cursor-pointer relative';
             
+            // Evento para abrir el modal
+            tarjeta.onclick = () => abrirModal(receta);
+
             // Etiqueta visual para coincidencias exactas o parciales
             let etiquetaFaltantes = '';
             if (receta.faltantes !== undefined) {
@@ -129,4 +139,105 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Iniciar la app
     cargarRecetas();
+
+    // Función para construir y mostrar el modal
+    function abrirModal(receta) {
+        // Construimos la lista de ingredientes (incluyendo los base)
+        const listaIngredientes = receta.ingredientes_clave.map(ing => 
+            `<li class="flex items-center gap-2 text-texto/90"><span class="text-acento">•</span> ${ing}</li>`
+        ).join('');
+
+        modalContenido.innerHTML = `
+            <div class="relative">
+                <img src="${receta.imagen}" alt="${receta.titulo}" class="w-full h-48 object-cover opacity-70">
+                <button onclick="mostrarRecetaCompleta(${receta.id})" class="w-full bg-texto text-fondo font-bold py-3 rounded-xl hover:bg-texto/80 transition-colors shadow-lg font-titulo">
+                    Ver Receta Completa
+                </button>
+            </div>
+            <div class="p-6">
+                <h2 class="font-titulo text-2xl mb-2">${receta.titulo}</h2>
+                <div class="flex gap-4 mb-6 border-b border-acento/20 pb-4">
+                    <span class="text-acento text-sm flex items-center gap-1">⏱ ${receta.tiempo_minutos} min</span>
+                </div>
+                
+                <h3 class="font-titulo text-lg mb-3 text-acento">Ingredientes Necesarios:</h3>
+                <ul class="grid grid-cols-2 gap-2 mb-6">
+                    ${listaIngredientes}
+                </ul>
+            </div>
+        `;
+
+        // Mostramos el modal con una transición suave
+        modalReceta.classList.remove('hidden');
+        // Pequeño truco para que la animación CSS se ejecute correctamente
+        setTimeout(() => {
+            modalReceta.classList.remove('opacity-0');
+            modalContenido.classList.remove('scale-95');
+        }, 10);
+    }
+
+    // Exponemos la función cerrarModal al ámbito global para el botón HTML
+    window.cerrarModal = function() {
+        modalReceta.classList.add('opacity-0');
+        modalContenido.classList.add('scale-95');
+        
+        setTimeout(() => {
+            modalReceta.classList.add('hidden');
+        }, 300); // Esperamos a que termine la animación
+    };
+
+    // Cerrar modal al hacer clic fuera de la tarjeta
+    modalReceta.addEventListener('click', (e) => {
+        if (e.target === modalReceta) {
+            cerrarModal();
+        }
+    });
+
+    // Función para mostrar la pantalla completa con los pasos
+    window.mostrarRecetaCompleta = function(idReceta) {
+        // Buscamos la receta exacta por su ID
+        const receta = todasLasRecetas.find(r => r.id === idReceta);
+        if (!receta) return;
+
+        // Cerramos el modal primero de forma inmediata
+        modalReceta.classList.add('hidden', 'opacity-0');
+        modalContenido.classList.add('scale-95');
+
+        // Construimos el HTML de los pasos instructivos
+        const pasosHtml = receta.instrucciones.map((paso, index) => `
+            <div class="bg-cristal/30 border border-acento/20 p-5 rounded-2xl flex gap-4 items-start backdrop-blur-sm">
+                <span class="bg-texto text-fondo font-bold w-6 h-6 rounded-full flex items-center justify-center text-sm shrink-0 mt-0.5 font-titulo">
+                    ${index + 1}
+                </span>
+                <p class="text-texto/90 text-sm leading-relaxed">${paso}</p>
+            </div>
+        `).join('');
+
+        // Inyectamos el contenido estructurado
+        detalleRecetaCompleta.innerHTML = `
+            <img src="${receta.imagen}" alt="${receta.titulo}" class="w-full h-56 object-cover rounded-3xl mb-6 opacity-80 border border-acento/20 shadow-lg">
+            <h2 class="font-titulo text-3xl mb-2">${receta.titulo}</h2>
+            <p class="text-acento text-sm mb-8">⏱ Tiempo total: ${receta.tiempo_minutos} minutos</p>
+            
+            <h3 class="font-titulo text-xl mb-4 text-acento">Procedimiento paso a paso:</h3>
+            <div class="grid gap-4 mb-12">
+                ${pasosHtml}
+            </div>
+        `;
+
+        // Activamos la pantalla completa con una animación fluida
+        pantallaRecetaCompleta.classList.remove('hidden');
+        setTimeout(() => {
+            pantallaRecetaCompleta.classList.remove('opacity-0');
+        }, 10);
+    };
+
+    // Lógica para el botón de regresar a la alacena
+    btnRegresar.addEventListener('click', () => {
+        pantallaRecetaCompleta.classList.add('opacity-0');
+        setTimeout(() => {
+            pantallaRecetaCompleta.classList.add('hidden');
+        }, 300);
+    });
+
 });

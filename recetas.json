@@ -1,39 +1,559 @@
 [
   {
     "id": 1,
-    "titulo": "Pollo a la plancha con pimientos",
-    "tiempo_minutos": 20,
-    "ingredientes_clave": ["pollo", "pimiento", "cebolla"],
-    "instrucciones": [
-      "Corta 200g de pechuga de pollo, 1 pimiento y media cebolla en tiras.",
-      "Calienta un sartén con aceite y saltea la cebolla con el pimiento por 5 minutos.",
-      "Agrega el pollo, sazona con sal y pimienta, y cocina hasta que esté dorado."
+    "titulo": "Huevos a la Mexicana",
+    "tiempo_minutos": 10,
+    "ingredientes_clave": [
+      "huevo",
+      "tomate",
+      "cebolla",
+      "chile serrano"
     ],
-    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Pollo+a+la+Plancha"
+    "instrucciones": [
+      "Pica el tomate, la cebolla y el chile serrano en cubitos.",
+      "En un sartén con aceite caliente, sofríe la cebolla y el chile por 2 minutos.",
+      "Agrega el tomate picado y cocina hasta que suelte su jugo.",
+      "Bate los huevos con sal al gusto, viértelos en el sartén y revuelve suavemente hasta que estén bien cocidos."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Huevos+a+la+Mexicana"
   },
   {
     "id": 2,
-    "titulo": "Arroz rojo sencillo",
-    "tiempo_minutos": 30,
-    "ingredientes_clave": ["arroz", "tomate", "cebolla", "caldo de pollo"],
-    "instrucciones": [
-      "Licúa 2 tomates con un trozo de cebolla y media taza de agua.",
-      "Fríe 1 taza de arroz en un sartén con aceite hasta que tome un color dorado ligero.",
-      "Vierte la mezcla de tomate, agrega 2 tazas de caldo de pollo, tapa y cocina a fuego bajo por 20 minutos."
+    "titulo": "Enfrijoladas de Queso",
+    "tiempo_minutos": 15,
+    "ingredientes_clave": [
+      "frijol",
+      "tortilla",
+      "queso",
+      "crema"
     ],
-    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Arroz+Rojo"
+    "instrucciones": [
+      "Licúa los frijoles cocidos con un poco de su caldo hasta obtener una salsa ligeramente espesa.",
+      "Calienta la salsa de frijol en una olla a fuego bajo.",
+      "Pasa las tortillas rápidamente por un sartén con aceite caliente para suavizarlas sin que se doren.",
+      "Baña las tortillas en la salsa de frijol, dóblalas por la mitad en un plato y decora con abundante queso espolvoreado y crema."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Enfrijoladas"
   },
   {
     "id": 3,
-    "titulo": "Pasta con ajo y espinacas",
+    "titulo": "Salchichas a la Mexicana",
     "tiempo_minutos": 15,
-    "ingredientes_clave": ["pasta", "espinaca"],
-    "instrucciones": [
-      "Hierve la pasta según las instrucciones del empaque.",
-      "En un sartén, dora un poco de ajo picado (de tu despensa base) en aceite de oliva.",
-      "Agrega un puñado de espinacas frescas hasta que se reduzcan.",
-      "Mezcla con la pasta escurrida y sirve."
+    "ingredientes_clave": [
+      "salchicha",
+      "tomate",
+      "cebolla",
+      "chile serrano"
     ],
-    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Pasta+con+Espinacas"
+    "instrucciones": [
+      "Corta las salchichas en rodajas y pica la cebolla, el tomate y el chile en cubos.",
+      "Dora las rodajas de salchicha en un sartén con un poco de aceite.",
+      "Agrega la cebolla y el chile serrano, sofriendo por un par de minutos.",
+      "Incorpora el tomate, sazona con sal y cocina tapado por 5 minutos hasta que el tomate cambie de color."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Salchichas+Mexicanas"
+  },
+  {
+    "id": 4,
+    "titulo": "Sopa de Fideo Rápida",
+    "tiempo_minutos": 20,
+    "ingredientes_clave": [
+      "fideo",
+      "tomate",
+      "cebolla",
+      "caldo de pollo"
+    ],
+    "instrucciones": [
+      "Licúa 2 tomates, un trozo de cebolla, un diente de ajo y una taza de agua o caldo.",
+      "En una olla, fríe la pasta de fideo con un poco de aceite a fuego medio hasta que tome un color dorado.",
+      "Vierte la mezcla licuada sobre el fideo dorado (cuidado con las salpicaduras) y deja hervir por 3 minutos.",
+      "Agrega más caldo de pollo hasta cubrir la pasta, sazona y cocina a fuego bajo hasta que el fideo esté suave y el líquido se reduzca."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Sopa+de+Fideo"
+  },
+  {
+    "id": 5,
+    "titulo": "Molletes Clásicos",
+    "tiempo_minutos": 10,
+    "ingredientes_clave": [
+      "bolillo",
+      "frijol",
+      "queso adobera",
+      "tomate",
+      "cebolla"
+    ],
+    "instrucciones": [
+      "Corta los bolillos por la mitad a lo largo y retira un poco del migajón si lo prefieres.",
+      "Unta una capa generosa de frijoles refritos sobre cada mitad.",
+      "Coloca rebanadas de queso adobera (o cualquier queso que gratine) sobre los frijoles.",
+      "Calienta en un sartén tapado a fuego bajo o en un hornito eléctrico hasta que el queso se ridicuza y se derrita.",
+      "Acompaña con pico de gallo fresco (tomate, cebolla y chile picados)."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Molletes"
+  },
+  {
+    "id": 6,
+    "titulo": "Tostadas de Atún Frescas",
+    "tiempo_minutos": 10,
+    "ingredientes_clave": [
+      "atún",
+      "tostada",
+      "mayonesa",
+      "tomate",
+      "cebolla"
+    ],
+    "instrucciones": [
+      "Drena el agua o aceite de las latas de atún.",
+      "En un tazón, mezcla el atún con el tomate y la cebolla finamente picados.",
+      "Agrega un par de cucharadas de mayonesa y mezcla bien.",
+      "Unta la mezcla sobre las tostadas crujientes. Puedes agregar unas gotas de salsa picante al gusto."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Tostadas+de+Atun"
+  },
+  {
+    "id": 7,
+    "titulo": "Quesadillas de Champiñones",
+    "tiempo_minutos": 15,
+    "ingredientes_clave": [
+      "tortilla",
+      "queso",
+      "champiñón",
+      "cebolla"
+    ],
+    "instrucciones": [
+      "Rebana los champiñones y pica la cebolla en tiras finas.",
+      "Saltea la cebolla con un poco de mantequilla o aceite en un sartén. Cuando esté transparente, agrega los champiñones y cocina hasta que reduzcan.",
+      "Calienta las tortillas, agrega el queso para que se derrita y coloca la mezcla de champiñones encima.",
+      "Dobla la tortilla, deja que se dore ligeramente por ambos lados y sirve."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Quesadillas"
+  },
+  {
+    "id": 8,
+    "titulo": "Chilaquiles Rojos Sencillos",
+    "tiempo_minutos": 15,
+    "ingredientes_clave": [
+      "totopos",
+      "tomate",
+      "chile serrano",
+      "queso",
+      "crema",
+      "cebolla"
+    ],
+    "instrucciones": [
+      "Hierve los tomates y los chiles serranos hasta que estén suaves.",
+      "Licúa los tomates y chiles hervidos con un diente de ajo, un trozo de cebolla y sal al gusto.",
+      "Sofríe la salsa en un sartén con un poco de aceite por 5 minutos.",
+      "Agrega los totopos a la salsa caliente y mezcla rápidamente para que no se aguaden demasiado.",
+      "Sirve inmediatamente decorando con crema, queso espolvoreado y aros de cebolla."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Chilaquiles"
+  },
+  {
+    "id": 9,
+    "titulo": "Tacos de Bistec Express",
+    "tiempo_minutos": 15,
+    "ingredientes_clave": [
+      "bistec de res",
+      "tortilla",
+      "cebolla",
+      "cilantro"
+    ],
+    "instrucciones": [
+      "Pica el bistec de res en trozos pequeños y sazona con sal y pimienta.",
+      "En un sartén con aceite bien caliente, fríe la carne hasta que esté dorada al gusto.",
+      "Pica finamente la cebolla y el cilantro fresco.",
+      "Calienta las tortillas en el mismo sartén para que absorban el sabor de la carne, monta los tacos y añade la cebolla y el cilantro encima."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Tacos+de+Bistec"
+  },
+  {
+    "id": 10,
+    "titulo": "Chorizo con Papas Casero",
+    "tiempo_minutos": 20,
+    "ingredientes_clave": [
+      "chorizo",
+      "papa",
+      "cebolla"
+    ],
+    "instrucciones": [
+      "Pela las papas y córtalas en cubos pequeños. Cocínalas en agua hirviendo con sal por 5 minutos para suavizarlas un poco y escúrrelas.",
+      "En un sartén amplio, fríe el chorizo desmenuzado a fuego medio hasta que suelte su grasa.",
+      "Agrega la cebolla picada y los cubos de papa escurridos.",
+      "Cocina todo junto revolviendo constantemente hasta que las papas estén completamente suaves y doraditas por fuera."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Chorizo+con+Papas"
+  },
+  {
+    "id": 11,
+    "titulo": "Tinga de Pollo Deshebrada",
+    "tiempo_minutos": 25,
+    "ingredientes_clave": [
+      "pechuga de pollo",
+      "cebolla",
+      "tomate",
+      "chile chipotle"
+    ],
+    "instrucciones": [
+      "Cuece la pechuga de pollo en agua con sal y deshébrala muy bien.",
+      "Corta la cebolla en tiras delgadas (fileteada) en cantidad abundante.",
+      "Licúa los tomates cocidos con uno o dos chiles chipotles de lata (según el picor deseado) y un chorrito del caldo de pollo.",
+      "Sofríe la cebolla hasta que esté transparente, agrega el pollo deshebrado, vierte la salsa de chipotle licuada y deja sazonar a fuego bajo por 10 minutos."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Tinga+de+Pollo"
+  },
+  {
+    "id": 12,
+    "titulo": "Rajas Poblanas con Crema y Elote",
+    "tiempo_minutos": 20,
+    "ingredientes_clave": [
+      "chile poblano",
+      "crema",
+      "elote en grano",
+      "queso"
+    ],
+    "instrucciones": [
+      "Tuesta los chiles poblanos en el comal, mételos en una bolsa para que suden, pélalos, retira las semillas y córtalos en tiras largas (rajas).",
+      "En un sartén, sofríe la cebolla fileteada y añade las rajas de poblano junto con los granos de elote.",
+      "Agrega la crema ácida y mezcla bien a fuego bajo cuidando que no hierva demasiado rápido.",
+      "Añade cubos de queso panela u oaxaca al final para que se suavicen un poco sin derretirse del todo antes de servir."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Rajas+Poblanas"
+  },
+  {
+    "id": 13,
+    "titulo": "Tacos Dorados de Papa",
+    "tiempo_minutos": 25,
+    "ingredientes_clave": [
+      "papa",
+      "tortilla",
+      "crema",
+      "queso cotija",
+      "lechuga"
+    ],
+    "instrucciones": [
+      "Cuece las papas, pélalas y machácalas hasta obtener un puré firme; sazona bien con sal.",
+      "Rellena el centro de las tortillas calientes con una cucharada de puré de papa y dóblalas por la mitad.",
+      "Fríe los tacos en abundante aceite caliente hasta que la tortilla quede completamente crujiente y dorada.",
+      "Escurre el exceso de grasa y sirve cubriendo con lechuga picada, crema y queso cotija espolvoreado."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Tacos+Dorados"
+  },
+  {
+    "id": 14,
+    "titulo": "Picadillo de Res Veloz",
+    "tiempo_minutos": 25,
+    "ingredientes_clave": [
+      "carne molida de res",
+      "papa",
+      "zanahoria",
+      "tomate"
+    ],
+    "instrucciones": [
+      "Pica la papa y la zanahoria en cubos diminutos.",
+      "Licúa los tomates cocidos con un trozo de cebolla y sal para formar el caldillo.",
+      "En una olla o sartén hondo, cocina la carne molida rompiendo los grumos hasta que cambie de color.",
+      "Agrega las verduras picadas y vierte el caldillo de tomate. Tapa y cocina a fuego medio por 15 minutos hasta que la verdura esté tierna."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Picadillo+de+Res"
+  },
+  {
+    "id": 15,
+    "titulo": "Alambre de Pollo Familiar",
+    "tiempo_minutos": 20,
+    "ingredientes_clave": [
+      "pechuga de pollo",
+      "pimiento",
+      "cebolla",
+      "tocino",
+      "queso"
+    ],
+    "instrucciones": [
+      "Corta la pechuga de pollo, el pimiento y la cebolla en cubos de tamaño similar.",
+      "En un sartén amplio, fríe el tocino picado hasta que esté crujiente; retíralo y reserva la grasa.",
+      "En esa misma grasa, saltea la cebolla y el pimiento, añade el pollo y cocina hasta que esté bien cocido.",
+      "Regresa el tocino al sartén, cubre toda la mezcla con abundante queso para gratinar y tapa por 2 minutos hasta que se derrita por completo."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Alambre+de+Pollo"
+  },
+  {
+    "id": 16,
+    "titulo": "Sopes Sencillos de Frijol con Queso",
+    "tiempo_minutos": 20,
+    "ingredientes_clave": [
+      "sopes listos",
+      "frijol",
+      "queso",
+      "crema",
+      "lechuga"
+    ],
+    "instrucciones": [
+      "Pasa los sopes comerciales o previamente hechos por un sartén con un poco de aceite caliente para dorar los bordes y la base.",
+      "Calienta tus frijoles refritos y unta una capa generosa en el fondo de cada sope.",
+      "Añade lechuga finamente picada encima de los frijoles.",
+      "Corona con crema ácida y espolvorea queso fresco o adobera rallado."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Sopes+Sencillos"
+  },
+  {
+    "id": 17,
+    "titulo": "Nopales con Huevo de Rancho",
+    "tiempo_minutos": 15,
+    "ingredientes_clave": [
+      "nopal",
+      "huevo",
+      "cebolla",
+      "tomate"
+    ],
+    "instrucciones": [
+      "Corta los nopales en cubos pequeños y cuécelos en una olla pequeña con agua y sal por 8 minutos. Escurre muy bien.",
+      "En un sartén con aceite, sofríe la cebolla picada y añade los nopales cocidos para que se doren un poco.",
+      "Agrega el tomate picado y cocina por 2 minutos más.",
+      "Vierte los huevos batidos directamente, sazona al gusto y revuelve de manera constante hasta lograr la consistencia deseada."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Nopales+con+Huevo"
+  },
+  {
+    "id": 18,
+    "titulo": "Entomatadas de Pollo Express",
+    "tiempo_minutos": 20,
+    "ingredientes_clave": [
+      "tomate",
+      "tortilla",
+      "pechuga de pollo",
+      "queso",
+      "crema"
+    ],
+    "instrucciones": [
+      "Licúa tomates cocidos con cebolla y sazona. Fríe la salsa en una olla pequeña para que espese ligeramente.",
+      "Pasa las tortillas por aceite caliente brevemente para suavizarlas sin endurecerlas.",
+      "Sumerge cada tortilla en la salsa caliente de tomate, colócala en un plato y rellénala con pollo cocido y deshebrado.",
+      "Dobla o enrolla las tortillas, báñalas con un poco más de salsa y decora con hilos de crema y queso espolvoreado."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Entomatadas"
+  },
+  {
+    "id": 19,
+    "titulo": "Calabacitas con Elote y Queso",
+    "tiempo_minutos": 20,
+    "ingredientes_clave": [
+      "calabacita",
+      "elote en grano",
+      "tomate",
+      "queso panela"
+    ],
+    "instrucciones": [
+      "Corta las calabacitas y el queso panela en cubos medianos; pica finamente el tomate y la cebolla.",
+      "Sofríe la cebolla en un sartén con aceite, añade el tomate picado y los granos de elote cocidos.",
+      "Agrega las calabacitas picadas, tapa el sartén y deja que se cocinen en su propio vapor a fuego bajo por 10 minutos.",
+      "Destapa, rectifica el sazón con sal, añade los cubos de queso panela y apaga el fuego para que el queso solo se caliente con el vapor."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Calabacitas+con+Elote"
+  },
+  {
+    "id": 20,
+    "titulo": "Tacos de Chicharrón en Salsa Verde",
+    "tiempo_minutos": 15,
+    "ingredientes_clave": [
+      "chicharrón de cerdo",
+      "tomatillo",
+      "chile serrano",
+      "tortilla"
+    ],
+    "instrucciones": [
+      "Hierve los tomatillos verdes y los chiles serranos en una olla pequeña hasta que cambien de color. Licúalos con un trozo de cebolla y sal.",
+      "Fríe la salsa verde en una cazuela profunda por 3 minutos.",
+      "Trocea el chicharrón de cerdo crujiente con las manos y agrégalo directamente a la salsa hirviendo.",
+      "Baja el fuego y deja que el chicharrón absorba la salsa y se ablande por completo. Sirve en tortillas calientes."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Chicharron+Salsa+Verde"
+  },
+  {
+    "id": 21,
+    "titulo": "Ceviche de Atún de Lata Rápido",
+    "tiempo_minutos": 10,
+    "ingredientes_clave": [
+      "atún",
+      "limón",
+      "pepino",
+      "tomate",
+      "cebolla morada",
+      "tostada"
+    ],
+    "instrucciones": [
+      "Escurre por completo el líquido de las latas de atún y colócalo en un tazón amplio.",
+      "Pica finamente el pepino (sin semillas), el tomate y la cebolla morada.",
+      "Mezcla las verduras con el atún, vierte el jugo de varios limones frescos y sazona con un poco de sal.",
+      "Deja reposar por 3 minutos en el refrigerador si es posible y sirve sobre tostadas crujientes."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Ceviche+de+Atun"
+  },
+  {
+    "id": 22,
+    "titulo": "Gringas de Pastor Express",
+    "tiempo_minutos": 15,
+    "ingredientes_clave": [
+      "carne al pastor lista",
+      "tortilla de harina",
+      "queso",
+      "piña"
+    ],
+    "instrucciones": [
+      "Calienta y dora ligeramente la carne al pastor (comprada ya preparada) en un sartén amplio.",
+      "En un comal aparte, coloca las tortillas de harina y añade una capa generosa de queso para fundir encima.",
+      "Agrega la carne caliente dorada sobre el queso derretido y añade unos trozos de piña picada.",
+      "Dobla la tortilla a la mitad formando una especie de sincronizada, deja dorar la harina por ambos lados y corta en triángulos."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Gringas+de+Pastor"
+  },
+  {
+    "id": 23,
+    "titulo": "Papas a la Mexicana Sencillas",
+    "tiempo_minutos": 20,
+    "ingredientes_clave": [
+      "papa",
+      "tomate",
+      "cebolla",
+      "chile serrano"
+    ],
+    "instrucciones": [
+      "Lava y corta las papas con todo y piel en cubos medianos.",
+      "Fríe las papas en un sartén con aceite caliente a fuego medio-bajo, tapadas, moviendo ocasionalmente hasta que se suavicen.",
+      "Agrega la cebolla y el chile serrano picados en cubitos, cocinando por 3 minutos.",
+      "Añade el tomate picado, espolvorea sal y deja sazonar destapado hasta que el tomate reduzca y las papas queden ligeramente doradas."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Papas+a+la+Mexicana"
+  },
+  {
+    "id": 24,
+    "titulo": "Huevo con Ejotes Tradicional",
+    "tiempo_minutos": 15,
+    "ingredientes_clave": [
+      "huevo",
+      "ejotes",
+      "cebolla"
+    ],
+    "instrucciones": [
+      "Lava los ejotes, retira las puntas y córtalos en trozos pequeños. Cuécelos en agua con sal por 6 minutos hasta que estén tiernos pero firmes.",
+      "Sofríe un poco de cebolla picada en un sartén y añade los ejotes bien escurridos para saltearlos por 2 minutos.",
+      "Bate los huevos en un plato aparte con una pizca de sal.",
+      "Vierte los huevos sobre los ejotes en el sartén y revuelve con una espátula hasta que el huevo esté completamente cocido."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Huevo+con+Ejotes"
+  },
+  {
+    "id": 25,
+    "titulo": "Enchiladas Suizas de Prisa",
+    "tiempo_minutos": 25,
+    "ingredientes_clave": [
+      "pechuga de pollo",
+      "tortilla",
+      "tomatillo",
+      "crema",
+      "queso"
+    ],
+    "instrucciones": [
+      "Licúa tomatillos verdes hervidos con un chile, sal y abundante crema ácida para lograr una salsa verde cremosa.",
+      "Pasa las tortillas por aceite caliente y rellénalas con el pollo deshebrado, acomodándolas en un refractario o plato apto para microondas.",
+      "Baña las tortillas completamente con la salsa verde cremosa.",
+      "Cubre con queso manchego o queso para fundir y calienta en el horno o microondas hasta que el queso gratine por completo."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Enchiladas+Suizas"
+  },
+  {
+    "id": 26,
+    "titulo": "Sopa de Letras Infantil",
+    "tiempo_minutos": 15,
+    "ingredientes_clave": [
+      "pasta de letras",
+      "tomate",
+      "cebolla",
+      "caldo de pollo"
+    ],
+    "instrucciones": [
+      "Licúa 2 tomates medianos con un trozo de cebolla y un diente de ajo hasta obtener un puré fino.",
+      "Dora la pasta de letras en una olla pequeña con un chorrito de aceite caliente, cuidando que no se queme.",
+      "Vierte el puré de tomate colado sobre la pasta dorada y deja que hierva por 2 minutos para sazonar.",
+      "Agrega 3 tazas de caldo de pollo o agua, tapa y cocina a fuego medio durante 8-10 minutos hasta que la pasta esté suave."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Sopa+de+Letras"
+  },
+  {
+    "id": 27,
+    "titulo": "Tacos de Canasta Express (Papa y Frijol)",
+    "tiempo_minutos": 25,
+    "ingredientes_clave": [
+      "tortilla",
+      "papa",
+      "frijol",
+      "cebolla",
+      "chile guajillo"
+    ],
+    "instrucciones": [
+      "Prepara un puré de papa sazonado y unos frijoles refritos bien secos. Rellena las tortillas calientes doblando a la mitad.",
+      "Licúa 2 chiles guajillo hervidos con cebolla y fríelos en abundante aceite para hacer un aceite rojo aromático.",
+      "En un recipiente con tapa (simulando la canasta) coloca una toalla limpia y ve acomodando capas de tacos y aros de cebolla.",
+      "Baños cada capa de tacos con cucharadas del aceite rojo hirviendo, cierra herméticamente el contenedor y deja sudar por 15 minutos."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Tacos+de+Canasta"
+  },
+  {
+    "id": 28,
+    "titulo": "Salpicón de Res Fresco",
+    "tiempo_minutos": 20,
+    "ingredientes_clave": [
+      "falda de res",
+      "lechuga",
+      "tomate",
+      "cebolla morada",
+      "aguacate",
+      "tostada"
+    ],
+    "instrucciones": [
+      "Cuece y deshebra finamente la falda de res (puedes comprarla ya cocida para ahorrar tiempo).",
+      "Pica la lechuga en tiras delgadas, el tomate en cubos y la cebolla morada en plumas delgadas.",
+      "En un ensaladero mezcla la carne, la lechuga, el tomate y la cebolla. Adereza con un toque de vinagre blanco, aceite de oliva y sal.",
+      "Sirve la mezcla fresca sobre tostadas y decora con rebanadas de aguacate encima."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Salpicon+de+Res"
+  },
+  {
+    "id": 29,
+    "titulo": "Tortas de Jamón Estilo Lonchería",
+    "tiempo_minutos": 10,
+    "ingredientes_clave": [
+      "bolillo",
+      "jamón",
+      "queso panela",
+      "mayonesa",
+      "tomate",
+      "aguacate"
+    ],
+    "instrucciones": [
+      "Abre los bolillos a la mitad y unta mayonesa en ambas caras interiores.",
+      "Coloca las rebanadas de jamón y láminas de queso panela.",
+      "Añade rodajas de tomate fresco, cebolla y rebanadas de aguacate blandito.",
+      "Calienta la torta armada sobre el comal presionando un poco hacia abajo por ambos lados hasta que el pan quede crujiente."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Torta+de+Jamon"
+  },
+  {
+    "id": 30,
+    "titulo": "Huevos Divorciados",
+    "tiempo_minutos": 15,
+    "ingredientes_clave": [
+      "huevo",
+      "tortilla",
+      "tomatillo",
+      "tomate",
+      "frijol"
+    ],
+    "instrucciones": [
+      "Prepara una salsa verde rápida cocinando tomatillos y una salsa roja rápida con jitomates.",
+      "Fríe ligeramente dos tortillas en aceite sin que se pongan duras y colócalas extendidas en un plato amplio.",
+      "Cocina dos huevos estrellados por separado y monta uno sobre cada tortilla.",
+      "Baña un huevo con la salsa verde y el otro con la salsa roja; pon una porción de frijoles refritos en medio para 'separarlos'."
+    ],
+    "imagen": "https://placehold.co/400x200/2C3E40/E4F1F2?text=Huevos+Divorciados"
   }
 ]

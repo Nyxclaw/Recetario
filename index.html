@@ -52,9 +52,24 @@
         <div id="contenedor-recetas" class="grid gap-5">
             </div>
 
+        <div id="modal-receta" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+            <div id="modal-contenido" class="bg-cristal/90 backdrop-blur-2xl border border-acento/40 rounded-3xl w-full max-w-lg overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300">
+                </div>
+        </div>
+
     </main>
 
     <script src="app.js"></script>
 
 </body>
+<section id="pantalla-receta-completa" class="fixed inset-0 bg-fondo z-40 hidden opacity-0 transition-all duration-300 overflow-y-auto p-6">
+        <div class="max-w-md mx-auto mt-6">
+            <button id="btn-regresar" class="flex items-center gap-2 text-acento hover:text-texto mb-6 transition-colors font-titulo">
+                ← Volver a la Alacena
+            </button>
+
+            <div id="detalle-receta-completa">
+                </div>
+        </div>
+    </section>
 </html>
